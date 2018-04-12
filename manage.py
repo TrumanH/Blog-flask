@@ -1,7 +1,7 @@
 from flask_script import Manager,Server
 from flask_migrate import Migrate, MigrateCommand
-
-from main import app, db, User, Post, Comment, Tag  #导入mian.py里的定义的数据模型
+from webapp import app
+from webapp.models import db, User, Post, Comment, Tag  #导入models.py里的定义的数据模型
 
 migrate = Migrate(app, db)
 
