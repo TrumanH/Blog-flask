@@ -3,11 +3,15 @@
 
 主页：
 ![](https://github.com/TrumanH/Blog-flask/raw/01/img/00.png?raw=true)
+
 点进文章详细页：
 ![](https://github.com/TrumanH/Blog-flask/raw/01/img/01.png?raw=true)
+
 文章编辑页：
 ![](https://github.com/TrumanH/Blog-flask/raw/01/img/02.png?raw=true)
+
 新建文章页：
 ![](https://github.com/TrumanH/Blog-flask/raw/01/img/03.png?raw=true)
 ...
+
 前端很粗糙，页面仅是简单实现了，后面有空再做的好看些...
