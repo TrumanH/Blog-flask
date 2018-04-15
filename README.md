@@ -1,10 +1,10 @@
 # Blog-flask
-Ò»¸ö»ùÓÚflask¿ò¼Ü´î½¨µÄ²©¿ÍÕ¾£¬ÓÃ»§Ğ´ÎÄÕÂ£¬¶ÁÕßÔÚÎÄÕÂÏÂĞ´ÆÀÂÛ£¬ÎÄÕÂÓĞ¹Ø¼ü×Ö±êÇ©£¬ÓÃ»§£¨×¢²á£¬µÇÂ½£¬µÇ³ö£©£¬ÎÄÕÂ£¨Ö÷Ò³ÁĞ±í£¬ÏêÏ¸£¬ĞÂ½¨£¬±à¼­£©...
-Ö÷Ò³£º
-![](https://github.com/TrumanH/-Blog-flask/raw/01/img/00.png?raw=true)
-µã½øÎÄÕÂÏêÏ¸Ò³£º
-![](https://github.com/TrumanH/-Blog-flask/raw/01/img/01.png?raw=true)
-ÎÄÕÂ±à¼­Ò³£º
-![](https://github.com/TrumanH/-Blog-flask/raw/01/img/02.png?raw=true)
-ĞÂ½¨ÎÄÕÂÒ³£º
-![](https://github.com/TrumanH/-Blog-flask/raw/01/img/03.png?raw=true)
+ä¸€ä¸ªåŸºäºflaskæ¡†æ¶æ­å»ºçš„åšå®¢ç«™ï¼Œç”¨æˆ·å†™æ–‡ç« ï¼Œè¯»è€…åœ¨æ–‡ç« ä¸‹å†™è¯„è®ºï¼Œæ–‡ç« æœ‰å…³é”®å­—æ ‡ç­¾ï¼Œç”¨æˆ·ï¼ˆæ³¨å†Œï¼Œç™»é™†ï¼Œç™»å‡ºï¼‰ï¼Œæ–‡ç« ï¼ˆä¸»é¡µåˆ—è¡¨ï¼Œè¯¦ç»†ï¼Œæ–°å»ºï¼Œç¼–è¾‘ï¼‰...
+ä¸»é¡µï¼š
+![](https://github.com/TrumanH/Blog-flask/raw/01/img/00.png?raw=true)
+ç‚¹è¿›æ–‡ç« è¯¦ç»†é¡µï¼š
+![](https://github.com/TrumanH/Blog-flask/raw/01/img/01.png?raw=true)
+æ–‡ç« ç¼–è¾‘é¡µï¼š
+![](https://github.com/TrumanH/Blog-flask/raw/01/img/02.png?raw=true)
+æ–°å»ºæ–‡ç« é¡µï¼š
+![](https://github.com/TrumanH/Blog-flask/raw/01/img/03.png?raw=true)
