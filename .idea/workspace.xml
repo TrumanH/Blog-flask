@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23f89036-7338-4bef-a84a-26a99d5d9f68" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/__init__.py" afterPath="$PROJECT_DIR$/webapp/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/config.py" afterPath="$PROJECT_DIR$/webapp/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/controllers/blog.py" afterPath="$PROJECT_DIR$/webapp/controllers/blog.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/forms.py" afterPath="$PROJECT_DIR$/webapp/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/models.py" afterPath="$PROJECT_DIR$/webapp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/templates/blog/base.html" afterPath="$PROJECT_DIR$/webapp/templates/blog/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/templates/blog/post.html" afterPath="$PROJECT_DIR$/webapp/templates/blog/post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/templates/blog/edit.html" afterPath="$PROJECT_DIR$/webapp/templates/blog/edit.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,14 +30,14 @@
         <option value="$PROJECT_DIR$/webapp/templates/main/new.html" />
         <option value="$PROJECT_DIR$/webapp/templates/main/edit.html" />
         <option value="$PROJECT_DIR$/webapp/templates/blog/new.html" />
-        <option value="$PROJECT_DIR$/webapp/templates/blog/edit.html" />
         <option value="$PROJECT_DIR$/webapp/templates/blog/post.html" />
+        <option value="$PROJECT_DIR$/webapp/templates/blog/edit.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-124" />
-    <option name="y" value="181" />
+    <option name="x" value="37" />
+    <option name="y" value="172" />
     <option name="width" value="1304" />
     <option name="height" value="825" />
   </component>
@@ -132,7 +125,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-124" y="181" width="1304" height="825" extended-state="1" />
+    <frame x="37" y="172" width="1304" height="825" extended-state="1" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24190938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -226,14 +219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/templates/blog/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="69" lean-forward="true" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/templates/blog/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -249,6 +234,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/templates/blog/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
           <folding />
         </state>
       </provider>
