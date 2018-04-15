@@ -1,10 +1,9 @@
 import datetime
-from os import path
 from sqlalchemy import func
 from flask import render_template, Blueprint
 
 from webapp.models import db, Post, Tag, Comment, User, tags
-from webapp.forms import CommentForm
+from webapp.forms import CommentForm, PostForm
 
 '''#自定义一个Jinja过滤器
 def count_substring(string, sub):
@@ -12,9 +11,8 @@ def count_substring(string, sub):
 #将其添加进jinja_env对象的filter字典：
 app.jinja_env.filters['count_substring'] = count_substring
 #模板中使用方式：{{ "string" | count_substring("sub") }}
-
 '''
-'''#登陆
+'''#登陆session方案
 from flask import g, session, abort
 @app.before_request    #处理view请求视图函数前,结束则:@app.teardown_request
 def before_request():
@@ -59,25 +57,20 @@ from flask import Blueprint
 example = Blueprint(
     'example', __name__,template_folder='templates/example',
     static_folder='static/example', url_prefix='/example')
-@example.route('/')
-def home():
-    return render_template('home.html')
+
 @app.register_blueprint(example)  #将蓝图添加到app中，下一步使用
 blog_blueprint = Blueprint('blog', __name__, template_folder='templates/blog',
     url_prefix='/blog') #移动模板,@app.route改为@blog_blueprint.route,
-#类视图注册到blog_blueprint,模板中也url_for()参数改(前面加句点),文件最后加上一句
+#类视图注册到blog_blueprint,模板中也url_for()参数改(前面加句点),文件最后加上注册
 #app.register_blueprint(blog_blueprint)
-#根路径重定向
-@app.route('/')
-def index():
-    return redirect(url_for('blog.home')) #blog蓝图名
 '''
 
 #引入蓝图,新建蓝图,添加蓝图到app,然后定义其视图
 Blog = Blueprint(
     'blog', __name__,template_folder='../templates/blog',
     static_folder='../static', url_prefix='/blog')
-#prefix会自动将url前缀加在这个蓝图所有路由之前 /blog/
+
+#prefix会自动将url前缀加在这个蓝图所有路由之前 /blog/
 
 @Blog.route('/')   #路由
 @Blog.route('/<int:page>')
@@ -98,7 +91,7 @@ def sidebar_data():
 @Blog.route('/post/<int:post_id>', methods=('GET', 'POST')) #路由，视图
 def post(post_id):
     form = CommentForm()
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #验证
         new_comment = Comment()
         new_comment.name = form.name.data
         new_comment.text = form.text.data
@@ -116,7 +109,7 @@ def post(post_id):
 
 @Blog.route('/tag/<string:tag_name>')
 def tag(tag_name):
-    tag = Tag.query.filter_by(title=tag_name).frist_or_404()
+    tag = Tag.query.filter_by(title=tag_name).first_or_404()
     posts = tag.posts.order_by(Post.publish_date.desc()).all()
     recent, top_tags = sidebar_data()
     return render_template('tag.html',tag=tag,posts=posts,recent=recent,
@@ -128,4 +121,31 @@ def user(username):
     recent, top_tags = sidebar_data()
     return render_template('user.html',user=user,posts=posts,recent=recent,
                            top_tags=top_tags)
+#新建文章
+@Blog.route('/new', methods=['GET', 'POST'])
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        new_post = Post(form.title.data)
+        new_post.text = form.text.data
+        new_post.publish_date = datetime.datetime.now()
 
+        db.session.add(new_post)
+        db.session.commit()
+    return render_template('new.html', form=form)
+#编辑文章
+@Blog.route('/edit/<int:id>', methods=['GET','POST'])
+def edit_post(id):
+    post = Post.query.get_or_404(id)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.text = form.text.data
+        post.publish_date = datetime.datetime.now()
+
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('.post', post_id=post.id))
+    form.text.data = post.text
+    return render_template('edit.html', form=form, post=post)
+    

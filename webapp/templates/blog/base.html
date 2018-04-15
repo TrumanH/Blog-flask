@@ -47,13 +47,30 @@
     <div class="container">
         <div class="jumbotron">
             <h1><a href="{{ url_for('.home') }}">My Blog</a></h1>
-                <p>Welcome to the blog!</p>
+            <p>Welcome to the blog!</p>
         </div>
-        {% block body %}
-        {% endblock %}
+        <!-- 还不能用
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        -->
     </div>
     <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    -->
+    {% block body %}
+    {% endblock %}
 </body>
 </html>
     

@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from webapp.extensions import bcrypt #user里密码检验用
 
 db = SQLAlchemy() #app不在，导入则会循环导入，所以在__init__.py中实现导入
 
@@ -21,7 +22,11 @@ class User(db.Model):  #主表
         self.username = username
     def __repr__(self):
         return "<User '{}'>".format(self.username)
-
+    def set_password(self, password):
+        self.password = bcrypt.generate_password_hash(password)
+    def check_password(self, password):
+        return bcrypt.check_password_hash(self.password, password)
+    
 class Post(db.Model):  #User的从表
     id = db.Column(db.Integer(), primary_key=True)
     title = db.Column(db.String(255))

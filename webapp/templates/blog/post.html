@@ -1,8 +1,8 @@
 ﻿{% extends "base.html" %}
 {% block title %}Post{{ post.title }}{% endblock %}
 {% block body%}
-<h5>{{ post.title }}</h5>
-<h2>作者:{{ post.user.username }}</h2>
+<h3>{{ post.title }}</h3>
+<h5>作者:{{ post.user.username }}</h5>
 <p>内容：{{ post.text }}</p>
 <p>发表日期：{{ post.publish_date }}</p>
 <div class="col-lg-12">
@@ -30,6 +30,19 @@
         </div>
         <input class="btn btn-primary" type="submit" value="Add Comment">
     </form>
+    <!--编辑文章-->
+    <div class="row">
+        <div class="col-lg-6">
+            <p>Written By <a href="{{ url_for('.user', username=post.user.username)}}">
+                {{ post.user.username }}</a> on {{ post.publish_data }}
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+            <a href="{{ url_for('.edit_post', id=post.id) }}" class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+    </div>
     <div >
         {% for comment in comments %}
         <p>{{ comment.name }}:{{ comment.text | safe }}--{{ comment.date }}</p>
